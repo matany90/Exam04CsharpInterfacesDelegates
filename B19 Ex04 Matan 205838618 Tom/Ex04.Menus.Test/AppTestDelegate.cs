@@ -61,7 +61,7 @@ namespace Ex04.Menus.Test
                     countDigits++;
                 }
             }
-            Console.WriteLine("Numebr of digits in sentence " + countDigits);
+            Console.WriteLine("Number of digits in sentence: " + countDigits);
         }
 
         public void ShowVersion()

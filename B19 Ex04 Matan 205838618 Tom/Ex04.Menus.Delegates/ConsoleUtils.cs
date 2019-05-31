@@ -13,6 +13,10 @@ namespace Ex04.Menus.Delegates
            
             switch (i_ValidationType)
             {
+                case eValidationOptions.YesNoQuestion:
+                    regexPattern = "^[y|n|Y|N]{1}$";
+                    errorToShow = "Invalid Input. Please choose between Y/N, try again and then press enter:";
+                    break;
                 case eValidationOptions.NumbersInRange:
                     regexPattern = "^[" + i_RangeMinValue + "-" + i_RangeMaxValue + "]{1}$";
                     errorToShow = string.Format(
@@ -28,7 +32,7 @@ namespace Ex04.Menus.Delegates
                 i_ToCheck = Console.ReadLine();
             }
 
-            return i_ToCheck;
+            return i_ToCheck.ToLower();
         }
     }
 }

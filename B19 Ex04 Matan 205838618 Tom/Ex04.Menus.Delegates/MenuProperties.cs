@@ -33,5 +33,17 @@ namespace Ex04.Menus.Delegates
 
             return int.Parse(ConsoleUtils.InputValidation(Console.ReadLine(), eValidationOptions.NumbersInRange, RangeMinValue, RangeMaxValue));
         }
+
+        public bool IsChooseAgain()
+        {
+            const string userSayYes = "y";
+
+            Console.WriteLine(string.Format(
+@"Would you like to go Back to Main Menu?
+Please choose Y/N, and then press enter:"));
+            string userChoice = ConsoleUtils.InputValidation(Console.ReadLine(), eValidationOptions.YesNoQuestion);
+
+            return userChoice.Equals(userSayYes);
+        }
     }
 }
