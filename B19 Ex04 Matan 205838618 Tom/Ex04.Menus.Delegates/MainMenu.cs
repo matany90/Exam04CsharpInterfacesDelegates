@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public delegate void Notifier<T>(string i_Param);
+    public delegate void Notifier<T>(T i_Param);
 
     public class MainMenu
     {
