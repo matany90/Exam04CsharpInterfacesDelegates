@@ -35,7 +35,7 @@ namespace Ex04.Menus.Interfaces
             }
             else //Current MenuItem is a leaf 
             {
-                m_RefBack.InformItemSelected(m_ItemName); //Call implemented method from interface in MainMenu class
+                m_RefBack.InformItemSelected(m_ItemName); //Call method in MainMenu - this method invoke Delegate's Invoke Method
                 if (m_MenuProperties.IsChooseAgain())
                 {
                     m_RefBack.Show();
