@@ -42,7 +42,10 @@ namespace Ex04.Menus.Interfaces
         //Invoke implemented method in AppTest class
         public void InformItemSelected(string i_ItemName)
         {
-            m_ChooseItemListener.InformItemSelected(i_ItemName);
+            if (m_ChooseItemListener != null)
+            {
+                m_ChooseItemListener.InformItemSelected(i_ItemName);
+            }
         }
     }
 }
