@@ -22,10 +22,17 @@ namespace Ex04.Menus.Delegates
 
         public void Show()
         {
-            int choice = m_MenuProperties.ShowMenuAndGetChoiceFromUser(m_FirstLevelMenu, k_IsFirstLevel);
-            if (choice != 0) //User NOT press Exit
+            if (m_FirstLevelMenu != null)
             {
-                m_FirstLevelMenu[choice - 1].Show();
+                int choice = m_MenuProperties.ShowMenuAndGetChoiceFromUser(m_FirstLevelMenu, k_IsFirstLevel);
+                if (choice != 0) //User NOT press Exit
+                {
+                    m_FirstLevelMenu[choice - 1].Show();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error. The menu not initialized with menu hierarchy");
             }
         }
 
