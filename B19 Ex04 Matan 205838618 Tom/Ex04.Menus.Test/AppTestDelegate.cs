@@ -41,7 +41,7 @@ namespace Ex04.Menus.Test
 
         public void ShowDate()
         {
-            Console.WriteLine(DateTime.Today);
+            Console.WriteLine(DateTime.Now.Date.ToString("dd/MM/yyyy"));
         }
 
         public void ShowTime()

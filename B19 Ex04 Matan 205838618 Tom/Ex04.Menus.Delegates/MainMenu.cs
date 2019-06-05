@@ -9,7 +9,7 @@ namespace Ex04.Menus.Delegates
         private List<MenuItem> m_FirstLevelMenu = null;
         private MenuProperties m_MenuProperties = new MenuProperties();
         const bool k_IsFirstLevel = true;
-        public event Notifier<string> InformChoose;
+        public event MenuItemSelectedDelegate<string> InformChoose;
 
         public MainMenu()
         {
@@ -36,10 +36,13 @@ namespace Ex04.Menus.Delegates
             }
         }
 
-        //Invoke implemented method in AppTest class
-        public void InformItemSelected(string i_ItemName)
+        //Invoke implemented method in AppTestDelegate class
+        public void OnInformItemSelected(string i_ItemName)
         {
-            InformChoose.Invoke(i_ItemName);
+            if (InformChoose != null)
+            {
+                InformChoose.Invoke(i_ItemName);
+            }
         }
     }
 }

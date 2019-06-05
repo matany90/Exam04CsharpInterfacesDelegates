@@ -4,5 +4,5 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public delegate void Notifier<T>(T i_Param);
+    public delegate void MenuItemSelectedDelegate<T>(T i_Param);
 }

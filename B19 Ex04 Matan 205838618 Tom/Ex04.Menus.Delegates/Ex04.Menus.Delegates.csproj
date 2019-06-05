@@ -42,7 +42,7 @@
     <Compile Include="MainMenu.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="MenuProperties.cs" />
-    <Compile Include="NotifierDelegate.cs" />
+    <Compile Include="MenuItemSelectedDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
