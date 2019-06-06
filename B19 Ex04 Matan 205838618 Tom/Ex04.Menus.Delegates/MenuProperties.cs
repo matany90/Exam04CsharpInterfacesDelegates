@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    class MenuProperties
+    internal class MenuProperties
     {        
         public int ShowMenuAndGetChoiceFromUser(List<MenuItem> i_MenuItems, bool isFirstLevel)
         {
@@ -17,6 +17,7 @@ namespace Ex04.Menus.Delegates
                 allOptions += index + ". " + menuItem.ItemName + Environment.NewLine;
                 index++;
             }
+
             if (isFirstLevel)
             {
                 allOptions += "0. Exit";
@@ -29,7 +30,10 @@ namespace Ex04.Menus.Delegates
             int? RangeMinValue = 0, RangeMaxValue = i_MenuItems.Count;
             Console.WriteLine(string.Format(
 @"Please select one of the options ({0}-{1}), then press enter:
-{2}", RangeMinValue, RangeMaxValue, allOptions));
+{2}", 
+RangeMinValue, 
+RangeMaxValue, 
+allOptions));
 
             return int.Parse(ConsoleUtils.InputValidation(Console.ReadLine(), eValidationOptions.NumbersInRange, RangeMinValue, RangeMaxValue));
         }

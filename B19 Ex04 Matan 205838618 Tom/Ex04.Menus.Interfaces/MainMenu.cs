@@ -6,10 +6,10 @@ namespace Ex04.Menus.Interfaces
 {
     public class MainMenu
     {
+        private const bool k_IsFirstLevel = true;
         private List<MenuItem> m_FirstLevelMenu = null;
         private MenuProperties m_MenuProperties = new MenuProperties();
-        const bool k_IsFirstLevel = true;
-        ISelectedItemListener m_ChooseItemListener;
+        private ISelectedItemListener m_ChooseItemListener;
 
         public MainMenu()
         {
@@ -25,7 +25,8 @@ namespace Ex04.Menus.Interfaces
             if (m_FirstLevelMenu != null)
             {
                 int choice = m_MenuProperties.ShowMenuAndGetChoiceFromUser(m_FirstLevelMenu, k_IsFirstLevel);
-                if (choice != 0) //User NOT press Exit
+                //// User NOT press Exit
+                if (choice != 0) 
                 {
                     m_FirstLevelMenu[choice - 1].Show();
                 }
@@ -46,7 +47,7 @@ namespace Ex04.Menus.Interfaces
             m_ChooseItemListener = null;
         }
 
-        //Invoke implemented method in AppTestInterface class
+        ////Invoke implemented method in AppTestInterface class
         public virtual void InformItemSelected(string i_ItemName)
         {
             if (m_ChooseItemListener != null)

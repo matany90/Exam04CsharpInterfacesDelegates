@@ -61,6 +61,7 @@ namespace Ex04.Menus.Test
                     countDigits++;
                 }
             }
+
             Console.WriteLine("Number of digits in sentence: " + countDigits);
         }
 
@@ -78,13 +79,12 @@ namespace Ex04.Menus.Test
             {
                 new MenuItem(firstItemFirstLevelName, getSecondLevelMenu(firstItemFirstLevelName, m_Menu), m_Menu),
                 new MenuItem(secondItemFirstLevelName, getSecondLevelMenu(secondItemFirstLevelName, m_Menu), m_Menu)
-
             };
 
             return MenuHierarchy;
         }
 
-        private  List<MenuItem> getSecondLevelMenu(string i_ItemName, MainMenu i_Menu)
+        private List<MenuItem> getSecondLevelMenu(string i_ItemName, MainMenu i_Menu)
         {
             List<MenuItem> SecondLevel = new List<MenuItem>();
 

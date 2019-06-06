@@ -17,7 +17,7 @@ namespace Ex04.Menus.Test
             m_Menu.Show();
         }
 
-        //ISelectedItemObserver Interface override
+        ////ISelectedItemObserver Interface override
         public void InformItemSelected(string i_ItemSelectedName)
         {
             switch (i_ItemSelectedName)
@@ -62,6 +62,7 @@ namespace Ex04.Menus.Test
                     countDigits++;
                 }
             }
+
             Console.WriteLine("Number of digits in sentence: " + countDigits);
         }
 
@@ -79,7 +80,6 @@ namespace Ex04.Menus.Test
             {
                 new MenuItem(firstItemFirstLevelName, getSecondLevelMenu(firstItemFirstLevelName, m_Menu), m_Menu),
                 new MenuItem(secondItemFirstLevelName, getSecondLevelMenu(secondItemFirstLevelName, m_Menu), m_Menu)
-
             };
 
             return MenuHierarchy;

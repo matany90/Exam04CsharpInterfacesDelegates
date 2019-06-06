@@ -6,9 +6,9 @@ namespace Ex04.Menus.Delegates
 {
     public class MenuItem
     {
+        private const bool k_IsFirstLevel = true;
         private string m_ItemName;
         private List<MenuItem> m_Items = null;
-        const bool k_IsFirstLevel = true;
         private MenuProperties m_MenuProperties = new MenuProperties();
         private MainMenu m_RefBack;
 
@@ -21,21 +21,25 @@ namespace Ex04.Menus.Delegates
 
         public void Show()
         {
-            if (m_Items != null) //Current MenuItem is NOT a leaf
+            ////Current MenuItem is NOT a leaf
+            if (m_Items != null) 
             {
                 int choice = m_MenuProperties.ShowMenuAndGetChoiceFromUser(m_Items, !k_IsFirstLevel);
-                if (choice != 0) //User NOT press Back
+                ////User NOT press Back
+                if (choice != 0) 
                 {
                     m_Items[choice - 1].Show();
                 }
                 else 
                 {
-                    m_RefBack.Show(); //User press Back
+                    ////User press Back
+                    m_RefBack.Show(); 
                 }
             }
-            else //Current MenuItem is a leaf 
+            else
             {
-                m_RefBack.OnInformItemSelected(m_ItemName); //Call method in MainMenu - this method invoke Delegate's Invoke Method
+                ////Call method in MainMenu - this method invoke Delegate's Invoke Method
+                m_RefBack.OnInformItemSelected(m_ItemName); 
                 if (m_MenuProperties.IsChooseAgain())
                 {
                     m_RefBack.Show();
@@ -52,6 +56,5 @@ namespace Ex04.Menus.Delegates
         {
             get { return m_Items; }
         }
-
     }
 }
