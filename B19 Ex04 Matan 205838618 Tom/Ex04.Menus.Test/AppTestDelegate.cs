@@ -12,12 +12,12 @@ namespace Ex04.Menus.Test
         public AppTestDelegate(MainMenu i_Menu)
         {
             m_Menu = i_Menu;
-            m_Menu.InformChoose += this.InformItemSelected;
+            m_Menu.InformChoose += this.menu_InformItemSelected;
             m_Menu.InitMenuHierarchy(GetMenuHierarchyForAppTest());
             m_Menu.Show();
         }
 
-        public void InformItemSelected(string i_ItemSelectedName)
+        private void menu_InformItemSelected(string i_ItemSelectedName)
         {
             switch (i_ItemSelectedName)
             {

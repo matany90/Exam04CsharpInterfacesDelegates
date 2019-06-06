@@ -47,7 +47,7 @@ namespace Ex04.Menus.Interfaces
         }
 
         //Invoke implemented method in AppTestInterface class
-        public void InformItemSelected(string i_ItemName)
+        public virtual void InformItemSelected(string i_ItemName)
         {
             if (m_ChooseItemListener != null)
             {

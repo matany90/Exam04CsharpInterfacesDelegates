@@ -37,7 +37,7 @@ namespace Ex04.Menus.Delegates
         }
 
         //Invoke implemented method in AppTestDelegate class
-        public void OnInformItemSelected(string i_ItemName)
+        public virtual void OnInformItemSelected(string i_ItemName)
         {
             if (InformChoose != null)
             {
