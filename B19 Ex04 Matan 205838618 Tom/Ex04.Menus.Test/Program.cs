@@ -17,8 +17,6 @@ namespace Ex04.Menus.Test
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
-            
         }
-
     }
 }

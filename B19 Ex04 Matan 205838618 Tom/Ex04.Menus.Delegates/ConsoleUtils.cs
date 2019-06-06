@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Ex04.Menus.Delegates
 {
-    static class ConsoleUtils
+    internal static class ConsoleUtils
     {
         public static string InputValidation(string i_ToCheck, eValidationOptions i_ValidationType, int? i_RangeMinValue = null, int? i_RangeMaxValue = null)
         {
